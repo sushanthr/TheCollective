@@ -1,6 +1,6 @@
 # The Collective
 
-The collective is a prototype for an open social network, with interesting properties. 
+The collective is a prototype for an open social network, with interesting properties: 
 - End to End encryption of all content. Safeguarding users from profiling, selling of user data.
 - Explicit data access control.
   At two levels:
