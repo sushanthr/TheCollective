@@ -12,7 +12,7 @@ validate a user token as having originated from the service.
 
 - Declare public key
 - Internal Table #1 UID table
--
+
 |Column| Details|
 |------|--------|
 |UID   | 32 byte identifier - 1 byte should be used to indicate the kind of identified this is which is User ID in this case |
@@ -21,7 +21,7 @@ validate a user token as having originated from the service.
 |User Public Key| Public key used to encrypt any content written to the user's storage |
 
 - Internal Table #2 UID Device table
--
+
 |Column| Details|
 |------|--------|
 |UID   | 32 byte identifier - 1 byte should be used to indicate the kind of identified this is which is User ID in this case |
