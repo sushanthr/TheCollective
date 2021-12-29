@@ -26,6 +26,7 @@ Other Salient features
   - Ads are going to be a necessary evil to fund a storage service. Each storage provider would be allowed to declare an advertiser id and ads would be placed, so that storage providers can pay for the service. Users brining their own storage will ofcourse not show ads.
  
  Flexible Content
+
  Social networks can be about images, blogs, videos, professional networks, real time communication - with the collective the goal is not to contrain the network to any particular genre. These genres are viewed like themes (declarative HTML/CSS) applied on a foundation of data access APIs and primitives. The eventual goal is to support sharing images, video, blogs, posts, chat, video conferencing.
  
  The idea is to build all of the above using web tech and web apps, have all the code inspectable and in Javascript even if this boils down to leaving out less capable devices or makes the tech a bit quirky.
