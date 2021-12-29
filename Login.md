@@ -12,8 +12,9 @@ validate a user token as having originated from the service.
 
 - Declare public key
 - Internal Table #1 UID table
+-
 |Column| Details|
------------------
+|------|--------|
 |UID   | 32 byte identifier - 1 byte should be used to indicate the kind of identified this is which is User ID in this case |
 |Storage Root URI| URL representing the storage root for this user |
 |Email| Email address, user to reset the account in case all registered devices are lost. See section about Account Reset, for caveats| 
@@ -21,11 +22,13 @@ validate a user token as having originated from the service.
 
 - Internal Table #2 UID Device table
 |Column| Details|
------------------
+|------|--------|
 |UID   | 32 byte identifier - 1 byte should be used to indicate the kind of identified this is which is User ID in this case |
 |Device Public Key| A registered public key for the UID |
 |User Private Key Encryption Challenge string| Challenge string used by the Device to retrieve the symmetric key for encrypting the User Private Key|
 |User Private Key | User private key encrypted by this device with symmetric encryption. Not decryptable by the service. |
+
+Note, each UID can have multiple rows since a user can register multiple devices.
 
 ## Account Registration
 During new user registration we ask for Email Id, Name and a register button that initiates the WebAuthN ceremony. Service brings to the table a unique UID. 
