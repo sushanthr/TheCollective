@@ -18,6 +18,7 @@ validate a user token as having originated from the service. Henceforth the user
 |UID   | 32 byte identifier - 1 byte should be used to indicate the kind of identified this is which is User ID in this case |
 |Storage Root URI| URL representing the storage root for this user |
 |Email| Email address, used to reset the account in case all registered devices are lost. See section about Account Reset, for caveats| 
+|DOM local storage Symmetric Encryption Key| Key provided by the service used to encrypt data stored in local dom storage. |
 
 - Internal Table #2 UID Device table
 
@@ -29,6 +30,8 @@ validate a user token as having originated from the service. Henceforth the user
 |Encrypted User Directory Private Key | User private key encrypted by this device with symmetric encryption. Not decryptable by the service. |
 
 Note, each UID can have multiple rows since a user can register multiple devices.
+
+- Rest API that provided a user token can return the DOM storage Symmetric Encryption Key.
 
 
 ## Account Registration
@@ -42,4 +45,4 @@ Storage in The collective is all based on folders and files, like linux everythi
 Key generation for the device specific symmetric key. WebAuthN APIs only allow for requesting the Authenticator devices to sign strings, there is a large blob extension that can allow for storing device specific symmetric key on the device but its support across devices is not clear. The solution at this point is to request webauthn to sign a known
 challenge string and use the signature string as the symmetric key. The User Private Key Encryption Challenge string will be saved on the service as well. Note: This second WebAuthN request will result in a second user prompt, however this is a one time affair as the generated symmetric key will be stored in the user local DOM storage until sign out.
 
-Storing the private key with Dom storage, content in DOM storage is encrypted with a symmetric key. This symmetric key is stored in the user's folder in an subfolder 'DOMStorageKey' that has no .keys file - hence is unencrypted. This enforces that user login is required to extract the un-encrypted User Directory Private Key from DOM storage.
+Storing the private key with local Dom storage https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage, content in DOM storage is encrypted with a symmetric key. This symmetric key is can be acquired from the service by calling a REST API with the user token.
