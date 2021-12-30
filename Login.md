@@ -17,7 +17,7 @@ validate a user token as having originated from the service. Henceforth the user
 |------|--------|
 |UID   | 32 byte identifier - 1 byte should be used to indicate the kind of identified this is which is User ID in this case |
 |Storage Root URI| URL representing the storage root for this user |
-|Email| Email address, user to reset the account in case all registered devices are lost. See section about Account Reset, for caveats| 
+|Email| Email address, used to reset the account in case all registered devices are lost. See section about Account Reset, for caveats| 
 
 - Internal Table #2 UID Device table
 
